@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_starwars"
+    app:startDestination="@id/fragment_splash">
+
+
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="com.example.syscostarwars.ui.fragment.splash.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/fragment_splash_to_planets"
+            app:destination="@id/fragment_planets"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/fragment_splash"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:id="@+id/fragment_planets"
+        android:name="com.example.syscostarwars.ui.fragment.planets.PlanetsFragment"
+        android:label="Planets"
+        tools:layout="@layout/fragment_planets">
+
+
+        <action
+            android:id="@+id/fragment_planets_to_planetdetails"
+            app:destination="@id/fragment_planet_details"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/fragment_planet_details"
+        android:name="com.example.syscostarwars.ui.fragment.planetdetails.PlanetDetailsFragment"
+        android:label="PlanetDetails"
+        tools:layout="@layout/fragment_planet_details">
+
+    </fragment>
+
+
+</navigation>
